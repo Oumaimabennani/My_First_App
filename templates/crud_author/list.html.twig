@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My App{% endblock %}
+
+{% block body %}
+   <table>
+   <tr>
+   id</tr>
+    <tr>
+   name</tr>
+    <tr {% for author in list%}>
+    <td> {{author.id}}</td>
+    <td> {{author.name}}</td>
+     <td> {{author.email}}</td>
+   </tr {%endfor%}>
+   </table>
+{% endblock %}

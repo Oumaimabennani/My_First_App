@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My App{% endblock %}
+
+{% block body %}
+   <h1>Add new  book </h1>
+ {{ form_start(form) }}
+    <table>
+    <tr>
+    <td> Title</td>
+    <td>  {{ form_widget(form.title)}}</td>
+    </tr></table>
+     {{ form_end(form) }}
+{% endblock %}

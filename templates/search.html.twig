@@ -1,0 +1,11 @@
+<!-- templates/author/search.html.twig -->
+
+<h1>Auteurs pour la bibliothèque "{{ library_name }}"</h1>
+
+<ul>
+    {% for author in authors %}
+        <li>{{ author.name }} ({{ author.nbrBook }} livres)</li>
+    {% else %}
+        <li>Aucun auteur trouvé.</li>
+    {% endfor %}
+</ul>

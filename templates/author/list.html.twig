@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Auteurs{% endblock %}
+
+{% block body %}
+{% set total_books = 0 %}
+{% if authors is not empty and authors is defined %}
+  <table>
+    <thead>
+        <tr>
+            <th>Nom de l'auteur</th>
+            
+            <th>Email</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+            <tr>
+                <td>{{ author.name }}</td>
+                <td>{{ author.email }}</td>
+                <td>
+                    {% if author.picture is defined %}
+                        <img src="{{ asset(author.picture) }}" width="100">
+                    {% else %}
+                        Pas d'image
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+    <p>La liste des auteurs est vide ou non définie.</p>
+{% endif %}
+{% endblock %}
